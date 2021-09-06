@@ -12,6 +12,7 @@
 		D08A228B26E6907800A799F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08A228A26E6907800A799F9 /* Assets.xcassets */; };
 		D08A228E26E6907800A799F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08A228D26E6907800A799F9 /* Preview Assets.xcassets */; };
 		D08A229526E69A3B00A799F9 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A229426E69A3B00A799F9 /* ScannerVC.swift */; };
+		D08A229726E6B1E700A799F9 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A229626E6B1E700A799F9 /* ScannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		D08A228A26E6907800A799F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D08A228D26E6907800A799F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D08A229426E69A3B00A799F9 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
+		D08A229626E6B1E700A799F9 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				D08A228A26E6907800A799F9 /* Assets.xcassets */,
 				D08A228C26E6907800A799F9 /* Preview Content */,
 				D08A229426E69A3B00A799F9 /* ScannerVC.swift */,
+				D08A229626E6B1E700A799F9 /* ScannerView.swift */,
 			);
 			path = SwiftUIBarcodeScanner;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D08A229526E69A3B00A799F9 /* ScannerVC.swift in Sources */,
+				D08A229726E6B1E700A799F9 /* ScannerView.swift in Sources */,
 				D08A228926E6907500A799F9 /* BarcodeScannerView.swift in Sources */,
 				D08A228726E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift in Sources */,
 			);

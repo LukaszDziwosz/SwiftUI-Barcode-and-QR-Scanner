@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftUI
 
 enum CameraError: String {
     case invalidDeviceInput = "Camera not accesable"
@@ -16,6 +17,7 @@ enum CameraError: String {
     case noObjects = "Can't find barcodes"
     case barcodeNotReadable = "Barcode is not readable"
     case invalidScannedValue  = "Barcode is not valid"
+    case previewUnable = "Camera preview failed"
 }
 
 protocol ScannerVcDelegate: AnyObject {
@@ -36,6 +38,20 @@ final class ScannerVC: UIViewController {
     }
     
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCaptureSession()
+    }
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        if let previewLayer = previewLayer {
+            previewLayer.frame = view.layer.bounds
+        }else {
+            scannerDelegate?.didFindError(error: .previewUnable)
+        }
+        
+    }
     
     private func setupCaptureSession (){
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
@@ -89,8 +105,9 @@ extension ScannerVC: AVCaptureMetadataOutputObjectsDelegate {
         }
         guard let barcode = machineReadableObject.stringValue else {
             scannerDelegate?.didFindError(error: .invalidScannedValue)
-            return 
+            return
         }
+      //  captureSession.stopRunning() //returning only one barcode
         scannerDelegate?.didFindBarcode(barcode: barcode)
     }
 }
