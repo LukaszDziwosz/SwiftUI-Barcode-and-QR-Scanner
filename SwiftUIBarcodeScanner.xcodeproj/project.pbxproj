@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D08A228726E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A228626E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift */; };
-		D08A228926E6907500A799F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A228826E6907500A799F9 /* ContentView.swift */; };
+		D08A228926E6907500A799F9 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A228826E6907500A799F9 /* BarcodeScannerView.swift */; };
 		D08A228B26E6907800A799F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08A228A26E6907800A799F9 /* Assets.xcassets */; };
 		D08A228E26E6907800A799F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08A228D26E6907800A799F9 /* Preview Assets.xcassets */; };
+		D08A229526E69A3B00A799F9 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A229426E69A3B00A799F9 /* ScannerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D08A228326E6907500A799F9 /* SwiftUIBarcodeScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBarcodeScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08A228626E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBarcodeScannerApp.swift; sourceTree = "<group>"; };
-		D08A228826E6907500A799F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D08A228826E6907500A799F9 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
 		D08A228A26E6907800A799F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D08A228D26E6907800A799F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D08A229426E69A3B00A799F9 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				D08A228626E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift */,
-				D08A228826E6907500A799F9 /* ContentView.swift */,
+				D08A228826E6907500A799F9 /* BarcodeScannerView.swift */,
 				D08A228A26E6907800A799F9 /* Assets.xcassets */,
 				D08A228C26E6907800A799F9 /* Preview Content */,
+				D08A229426E69A3B00A799F9 /* ScannerVC.swift */,
 			);
 			path = SwiftUIBarcodeScanner;
 			sourceTree = "<group>";
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D08A228926E6907500A799F9 /* ContentView.swift in Sources */,
+				D08A229526E69A3B00A799F9 /* ScannerVC.swift in Sources */,
+				D08A228926E6907500A799F9 /* BarcodeScannerView.swift in Sources */,
 				D08A228726E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +276,7 @@
 				DEVELOPMENT_TEAM = UB2HCX38P3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use camera to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,6 +307,7 @@
 				DEVELOPMENT_TEAM = UB2HCX38P3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to use camera to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
