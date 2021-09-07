@@ -10,6 +10,7 @@ import SwiftUI
 struct ScannerView: UIViewControllerRepresentable {
     
     @Binding var scannedCode: String
+    @Binding var alertItem: AlertItem?
     
     func makeCoordinator() -> Coordinator {
         Coordinator(scannerView: self)//our own class inside struct :)
@@ -37,7 +38,24 @@ struct ScannerView: UIViewControllerRepresentable {
         }
         
         func didFindError(error: CameraError) {
-            print(error.rawValue)
+            switch error {
+            case .previewUnable :
+                scannerView.alertItem = AlertContext.previewUnable
+            case .invalidDeviceInput:
+                scannerView.alertItem = AlertContext.invalidDeviceInput
+            case .invalidMode:
+                print("do more")
+            case .sessionUnable:
+                print("do more")
+            case .metaDataOutout:
+                print("do more")
+            case .noObjects:
+                print("do more")
+            case .barcodeNotReadable:
+                print("do more")
+            case .invalidScannedValue:
+                print("do more")
+            }
         }
         
         
@@ -45,8 +63,4 @@ struct ScannerView: UIViewControllerRepresentable {
     
 }
 
-struct ScannerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScannerView(scannedCode: .constant("1234567890"))
-    }
-}
+
