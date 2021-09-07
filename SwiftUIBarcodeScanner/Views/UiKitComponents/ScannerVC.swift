@@ -78,7 +78,7 @@ final class ScannerVC: UIViewController {
         if captureSession.canAddOutput(metaDataOutput){
             captureSession.addOutput(metaDataOutput)
             metaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metaDataOutput.metadataObjectTypes = [.ean8, .ean13]
+            metaDataOutput.metadataObjectTypes = [.ean8, .ean13, .code39, .code39Mod43, .code93, .code128, .interleaved2of5, .itf14, .upce, .qr, .aztec, .dataMatrix, .pdf417]
         }else{
             scannerDelegate?.didFindError(error: .metaDataOutout)
             return
