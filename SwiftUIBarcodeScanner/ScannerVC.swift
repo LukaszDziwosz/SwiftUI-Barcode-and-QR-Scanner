@@ -9,15 +9,15 @@ import UIKit
 import AVFoundation
 import SwiftUI
 
-enum CameraError: String {
-    case invalidDeviceInput = "Camera not accesable"
-    case invalidMode = "Video capture not possible"
-    case sessionUnable = "Capturing session failed"
-    case metaDataOutout = "Barcode search failed"
-    case noObjects = "Can't find barcodes"
-    case barcodeNotReadable = "Barcode is not readable"
-    case invalidScannedValue  = "Barcode is not valid"
-    case previewUnable = "Camera preview failed"
+enum CameraError {
+    case invalidDeviceInput
+    case invalidMode
+    case sessionUnable
+    case metaDataOutout
+    case noObjects
+    case barcodeNotReadable
+    case invalidScannedValue
+    case previewUnable
 }
 
 protocol ScannerVcDelegate: AnyObject {
@@ -45,17 +45,17 @@ final class ScannerVC: UIViewController {
     }
     override func viewDidLayoutSubviews(){
         super.viewDidLayoutSubviews()
-        if let previewLayer = previewLayer {
-            previewLayer.frame = view.layer.bounds
-        }else {
-            scannerDelegate?.didFindError(error: .previewUnable)
+        guard let previewLayer = previewLayer else {
+            scannerDelegate?.didFindError(error: .invalidDeviceInput)
+            return
         }
         
+        previewLayer.frame = view.layer.bounds
     }
     
     private func setupCaptureSession (){
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
-            scannerDelegate?.didFindError(error: .invalidDeviceInput)
+            scannerDelegate?.didFindError(error: .invalidMode)
             return
         }
         let videoInput: AVCaptureDeviceInput
@@ -63,7 +63,7 @@ final class ScannerVC: UIViewController {
         do {
             try videoInput = AVCaptureDeviceInput(device: videoCaptureDevice)
         }catch{
-            scannerDelegate?.didFindError(error: .invalidMode)
+            scannerDelegate?.didFindError(error: .invalidDeviceInput)
             return
         }
         

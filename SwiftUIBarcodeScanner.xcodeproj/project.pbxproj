@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D003317126E7DC1A00DBBC96 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003317026E7DC1A00DBBC96 /* Alert.swift */; };
 		D08A228726E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A228626E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift */; };
 		D08A228926E6907500A799F9 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A228826E6907500A799F9 /* BarcodeScannerView.swift */; };
 		D08A228B26E6907800A799F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08A228A26E6907800A799F9 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D003317026E7DC1A00DBBC96 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D08A228326E6907500A799F9 /* SwiftUIBarcodeScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBarcodeScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08A228626E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBarcodeScannerApp.swift; sourceTree = "<group>"; };
 		D08A228826E6907500A799F9 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				D08A228C26E6907800A799F9 /* Preview Content */,
 				D08A229426E69A3B00A799F9 /* ScannerVC.swift */,
 				D08A229626E6B1E700A799F9 /* ScannerView.swift */,
+				D003317026E7DC1A00DBBC96 /* Alert.swift */,
 			);
 			path = SwiftUIBarcodeScanner;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				D08A229526E69A3B00A799F9 /* ScannerVC.swift in Sources */,
 				D08A229726E6B1E700A799F9 /* ScannerView.swift in Sources */,
 				D08A228926E6907500A799F9 /* BarcodeScannerView.swift in Sources */,
+				D003317126E7DC1A00DBBC96 /* Alert.swift in Sources */,
 				D08A228726E6907500A799F9 /* SwiftUIBarcodeScannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

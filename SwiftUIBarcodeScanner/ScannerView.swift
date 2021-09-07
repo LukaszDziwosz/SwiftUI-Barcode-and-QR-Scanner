@@ -12,19 +12,16 @@ struct ScannerView: UIViewControllerRepresentable {
     @Binding var scannedCode: String
     @Binding var alertItem: AlertItem?
     
+    func makeUIViewController(context: Context) -> ScannerVC {
+        ScannerVC(scannerDelegate: context.coordinator)
+    }
+    func updateUIViewController(_ uiViewController: ScannerVC, context: Context) {
+    }
     func makeCoordinator() -> Coordinator {
         Coordinator(scannerView: self)//our own class inside struct :)
     }
     
-    
-    func makeUIViewController(context: Context) -> ScannerVC {
-        ScannerVC(scannerDelegate: context.coordinator)
-    }
-    
-    func updateUIViewController(_ uiViewController: ScannerVC, context: Context) {
-    }
-    
-   // typealias UIViewControllerType = ScannerVC
+    // typealias UIViewControllerType = ScannerVC
     final class Coordinator: NSObject, ScannerVcDelegate {
        
         private let scannerView: ScannerView
@@ -37,24 +34,24 @@ struct ScannerView: UIViewControllerRepresentable {
             scannerView.scannedCode = barcode
         }
         
-        func didFindError(error: CameraError) {
+        func didFindError(error: CameraError){
             switch error {
             case .previewUnable :
                 scannerView.alertItem = AlertContext.previewUnable
             case .invalidDeviceInput:
                 scannerView.alertItem = AlertContext.invalidDeviceInput
             case .invalidMode:
-                print("do more")
+                scannerView.alertItem = AlertContext.invalidMode
             case .sessionUnable:
-                print("do more")
+                scannerView.alertItem = AlertContext.sessionUnable
             case .metaDataOutout:
-                print("do more")
+                scannerView.alertItem = AlertContext.metaDataOutout
             case .noObjects:
-                print("do more")
+                scannerView.alertItem = AlertContext.noObjects
             case .barcodeNotReadable:
-                print("do more")
+                scannerView.alertItem = AlertContext.barcodeNotReadable
             case .invalidScannedValue:
-                print("do more")
+                scannerView.alertItem = AlertContext.invalidScannedValue
             }
         }
         

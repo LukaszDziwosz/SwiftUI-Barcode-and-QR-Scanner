@@ -7,15 +7,8 @@
 
 import SwiftUI
 
-struct AlertItem {
-    let title: String
-    let message: String
-    let dismiss: Alert.Button
-    }
-struct AlertContext {
-    static let previewUnable = AlertItem(title: "Unable To Start Preview", message: "Camera preview failed", dismiss: .default(Text("OK")))
-    static let invalidDeviceInput = AlertItem(title: "Invalid Device Input", message: "Camera not accesable", dismiss: .default(Text("OK")))
-}
+
+
 struct BarcodeScannerView: View {
     
     @State private var scannedCode = ""
@@ -39,6 +32,10 @@ struct BarcodeScannerView: View {
                     .padding()
                 
             }.navigationTitle("Barcode Scanner")
+                .alert(item: $alertItem) { alertItem in
+                    Alert(title: Text(alertItem.title), message: Text(alertItem.message), dismissButton: alertItem.dismiss)
+                }
+            
         }
     }
 }
