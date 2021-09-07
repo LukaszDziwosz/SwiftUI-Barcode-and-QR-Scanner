@@ -18,17 +18,17 @@ struct BarcodeScannerView: View {
                             alertItem: $viewModel.alertItem)
                     .frame(maxWidth: .infinity, maxHeight: 300)
                 
-                Spacer().frame(height: 60)
+                Spacer().frame(height: 40)
                 
                 Label("Scanned Barcode", systemImage: "barcode.viewfinder")
                     .font(.title)
                 
                 Text(viewModel.statusText)
-                    .font(.title2)
+                    .font(.largeTitle)
                     .fontWeight(.bold)
-                    .scaledToFit()
-                    .minimumScaleFactor(0.3)
                     .lineLimit(nil)
+                    //.scaledToFit()
+                    .minimumScaleFactor(0.3)
                     .foregroundColor(viewModel.statusTextColor)
                     .textSelection(.enabled) //iOS 15 freature
                     .padding()
